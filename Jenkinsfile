@@ -12,8 +12,15 @@ pipeline {
       stage('build'){
         steps {
           sh 'mvn clean compile'
-           
         }
       }
     }
-  }
+      post {
+         success{
+            slackSend channel: 'dedevops-pipeline-demo', message: 'pipeline Built Successfully'
+         }
+         failure {
+             channel: 'dedevops-pipeline-demo', message: 'pipeline Failed'
+         }
+      }
+   }
