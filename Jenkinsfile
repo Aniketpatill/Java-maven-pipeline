@@ -20,7 +20,7 @@ pipeline {
             slackSend channel: 'dedevops-pipeline-demo', message: 'pipeline Built Successfully'
          }
          failure {
-             channel: 'dedevops-pipeline-demo', message: 'pipeline Failed'
+            slackSend channel: 'dedevops-pipeline-demo', message: 'pipeline Failed'
          }
       }
    }
