@@ -23,5 +23,4 @@ pipeline {
           slackSend channel: 'devops-pipeline-demo', message: 'pipeline Failed'
        }
      }
-  }
- 
+   } 
